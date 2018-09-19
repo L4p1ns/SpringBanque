@@ -3,4 +3,4 @@
 Gestion d'une Banque
 > Backend (**Spring**)
 
-> Fronted (**Angular**)
+> Frontend (**Angular**)

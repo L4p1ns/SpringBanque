@@ -12,7 +12,7 @@ public abstract class Compte implements Serializable {
     @Id
     private String codeCompte;
     private Date dateCreation;
-    private Double solde;
+    private double solde;
     @ManyToOne
     @JoinColumn(name = "CODE_CLIENT")
     private Client client;
@@ -22,7 +22,7 @@ public abstract class Compte implements Serializable {
     public Compte() {
     }
 
-    public Compte(String codeCompte, Date dateCreation, Double solde, Client client) {
+    public Compte(String codeCompte, Date dateCreation, double solde, Client client) {
         this.codeCompte = codeCompte;
         this.dateCreation = dateCreation;
         this.solde = solde;
@@ -45,11 +45,11 @@ public abstract class Compte implements Serializable {
         this.dateCreation = dateCreation;
     }
 
-    public Double getSolde() {
+    public double getSolde() {
         return solde;
     }
 
-    public void setSolde(Double solde) {
+    public void setSolde(double solde) {
         this.solde = solde;
     }
 

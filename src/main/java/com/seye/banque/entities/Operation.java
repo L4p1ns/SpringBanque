@@ -11,7 +11,7 @@ public abstract class Operation implements Serializable {
     @Id @GeneratedValue
     private Long numero;
     private Date dateOperation;
-    private Double montant;
+    private double montant;
     @ManyToOne
     @JoinColumn(name = "CODE_COMPTE")
     private Compte compte;
@@ -19,7 +19,7 @@ public abstract class Operation implements Serializable {
     public Operation() {
     }
 
-    public Operation(Date dateOperation, Double montant, Compte compte) {
+    public Operation(Date dateOperation, double montant, Compte compte) {
         this.dateOperation = dateOperation;
         this.montant = montant;
         this.compte = compte;
@@ -41,11 +41,11 @@ public abstract class Operation implements Serializable {
         this.dateOperation = dateOperation;
     }
 
-    public Double getMontant() {
+    public double getMontant() {
         return montant;
     }
 
-    public void setMontant(Double montant) {
+    public void setMontant(double montant) {
         this.montant = montant;
     }
 

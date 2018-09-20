@@ -6,9 +6,10 @@ import java.util.Collection;
 
 @Entity
 public class Client implements Serializable {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long code;
-    private String nom,email;
+    private String nom, email;
     @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
     private Collection<Compte> comptes;
 

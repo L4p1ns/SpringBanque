@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Entity
 @DiscriminatorValue("V")
-public class Versement extends Operation{
+public class Versement extends Operation {
     public Versement() {
         super();
     }

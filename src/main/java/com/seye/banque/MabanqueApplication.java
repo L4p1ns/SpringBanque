@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 
 import java.util.Date;
 
@@ -21,12 +22,18 @@ public class MabanqueApplication implements CommandLineRunner {
     @Autowired
     private OperationRepository operationRepository;
 
+    // inclure l'id des Entités
+    @Autowired
+    private RepositoryRestConfiguration repositoryRestConfiguration;
+
     public static void main(String[] args) {
         SpringApplication.run(MabanqueApplication.class, args);
     }
 
     @Override
     public void run(String... args) throws Exception {
+        // inclure l'id des Entités
+        repositoryRestConfiguration.exposeIdsFor(Client.class, CompteCourant.class, CompteEpargne.class, Versement.class, Retrait.class);
         // Client
         Client client1 = clientRepository.save(new Client("Baye ndemba SEYE", "bayendemba@gmail.com"));
         Client client2 = clientRepository.save(new Client("Ndeye Coumba SAMB", "ndeycsamb@gmail.com"));
